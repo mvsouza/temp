@@ -1,0 +1,4 @@
+version: '3.8'
+services:
+  test-task:
+    command: ["/bin/sh", "-c", "(cd test-task/src && go test -v)"]
