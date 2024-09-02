@@ -3,7 +3,7 @@ services:
   test-task:
     build:
       context: .
-      dockerfile: docker/Dockerfile-dev
+      dockerfile: docker/Dockerfile
     image: adjoe-test/golang-dev
     ports:
       - "3333:3000"

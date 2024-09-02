@@ -1,4 +1,10 @@
-FROM adjoe-test/golang-base
+FROM golang:1.22 AS base
+
+RUN mkdir -p /go/src/adjoe.io
+
+WORKDIR /go/src/adjoe.io
+
+FROM adjoe-test/golang-base AS dev
 
 ENV GO111MODULE=on
 
