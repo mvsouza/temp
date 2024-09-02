@@ -9,10 +9,15 @@ up:
 	@make build
 	@make vendor
 	docker-compose -f docker-compose.yml up -d
+test:
+	@make build
+	@make vendor
+	docker-compose -f docker-compose.yml -f docker-compose-ci.yml up --abort-on-container-exit
+
 logs:
 	docker-compose logs -f
 rm:
-	docker-compose rm  -sfv
+	docker-compose rm -sfv
 start:
 	docker-compose start
 stop:
